@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" href="./imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./imgs/logo.png" alt="" class="logo">
+            <div class="header-right">
+                <button class="units">Display °F</button>
+                <div class="form-container">
+                    <form action="" class="form">
+                        <label for="city"></label>
+                        <input class="search" type="text" name="city" id="city" placeholder="Search City" required>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="content">
+            <div class="main">
+                <div class="upper">
+                    <div class="location">
+                        <img src="" alt="" class="pin">
+                        <h3 class="location-name">
+                            Anaheim Hills
+                        </h3>
+                    </div>
+                    <div class="date">Monday | January 9</div>
+                </div>
+
+                <div class="middle">
+                    <h1 class="temperature">
+                        78°
+                    </h1>
+                    <div class="weather-type">Sunny</div>
+                </div>
+
+                <div class="lower">
+                    <div class="precipitation-container">
+                        <img src="" alt="" class="rain-img">
+                        <h4 class="rain-percent">30%</h4>
+                        <h5 class="precipitation-text">Precipitation</h5>
+                    </div>
+
+                    <div class="humidity-container">
+                        <img src="" alt="" class="humidity-img">
+                        <h4 class="humidity-percent">20%</h4>
+                        <h5 class="humidity-text">Humidity</h5>
+                    </div>
+
+                    <div class="wind-container">
+                        <img src="" alt="" class="wind-img">
+                        <h4 class="wind-speed">12 m/h</h4>
+                        <h5 class="wind-text">Wind Speed</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="forecast-alignment">
+                    <div class="forecast-title">
+                        5-Day Forecast
+                    </div>
+                </div>
+
+                <div class="forecast-content">
+                    <div class="days today">
+                        <div class="day">MON</div>
+                        <img src="./imgs/sunny.png" alt="" class="weather-type-img">
+                        <div class="forecast-temp">
+                            <div class="high">78°</div>
+                            <div class="low">76°</div>
+                        </div>
+
+                    </div>
+                    <div class="days future">
+                        <div class="day">MON</div>
+                        <img src="./imgs/rainy.png" alt="" class="weather-type-img">
+                        <div class="forecast-temp">
+                            <div class="high">78°</div>
+                            <div class="low">76°</div>
+                        </div>
+                    </div>
+                    <div class="days future">
+                        <div class="day">MON</div>
+                        <img src="./imgs/snowy.png" alt="" class="weather-type-img">
+                        <div class="forecast-temp">
+                            <div class="high">78°</div>
+                            <div class="low">76°</div>
+                        </div>
+                    </div>
+                    <div class="days future">
+                        <div class="day">MON</div>
+                        <img src="./imgs/windy.png" alt="" class="weather-type-img">
+                        <div class="forecast-temp">
+                            <div class="high">78°</div>
+                            <div class="low">76°</div>
+                        </div>
+                    </div>
+                    <div class="days future">
+                        <div class="day">MON</div>
+                        <img src="./imgs/cloudy.png" alt="" class="weather-type-img">
+                        <div class="forecast-temp">
+                            <div class="high">78°</div>
+                            <div class="low">76°</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

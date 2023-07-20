@@ -1,0 +1,178 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: 'Noto Sans', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    /* background: linear-gradient(#a4a1ce, #dcdbee); */
+    min-height: 100vh;
+    height: auto;
+    --light:#dad8e6;
+    --dark:#0e2088;
+    background-image: url(./imgs/background.jpg)
+}
+
+/* Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-right{
+    display: flex;
+    width:300px;
+    justify-content: center;
+    gap:20px;
+    align-items: center;
+
+}
+
+.units{
+    height: 30px;
+    padding:4px 8px;
+    border-radius: 6px;
+    background-color:white;
+    color:var(--dark);
+    font-weight: bold;
+    border:none;
+}
+
+.units:hover{
+    filter: brightness(90%);
+}
+
+.search{
+    color:var(--dark);
+    font-weight: bold;
+    border-radius: 10px;
+    padding:10px 10px;
+    border:none;
+    background-color:white;
+}
+.search:focus{
+    outline:none;
+    filter: brightness(90%);
+}
+.search:hover{
+    filter:brightness(90%)
+}
+
+/* .search::placeholder{
+    margin-left:100px;
+} */
+
+
+/* Content */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    text-align: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+
+.location-name{
+    color: var(--dark);
+    font-size:26px;
+}
+
+.date{
+    color:var(--dark);
+}
+.temperature{
+    margin-left:30px;
+    font-size:100px;
+    color:var(--dark);
+
+}
+
+.weather-type{
+    color:var(--dark);
+
+}
+
+
+.lower{
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding:20px 10px;
+    gap:50px;
+    background-color: white;
+    border-radius:50px;
+    width:350px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+}
+
+.precipitation-container, .humidity-container, .wind-container{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+}
+
+.precipitation-text, .humidity-text, .wind-text{
+    color:var(--dark);
+
+
+}
+
+/* Forecast */
+.forecast{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap:20px;
+
+}
+.forecast-alignment{
+    /* width:100%; */
+    justify-content: flex-start;
+}
+.forecast-title{
+    color:var(--dark);
+    font-size:22px;
+    font-weight:bold;
+    /* width:30%; */
+}
+.forecast-content{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:15px;
+}
+.days{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    width:130px;
+    height:200px;
+    border:solid;
+    border-radius:16px;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.weather-type-img{
+    height:40px;
+    width: 40px;
+}
+
+.forecast-temp{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
