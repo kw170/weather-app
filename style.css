@@ -2,6 +2,7 @@
     margin:0px;
     padding:0px;
     font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden;
 }
 .container{
     display: flex;
@@ -37,6 +38,7 @@
     color:var(--dark);
     font-weight: bold;
     border:none;
+    white-space: nowrap;
 }
 
 .units:hover{

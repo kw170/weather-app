@@ -1,30 +1,66 @@
 const form = document.querySelector("form");
-const submit = document.querySelector(".sumbit");
+const submit = document.querySelector(".submit");
+
+const units = document.querySelector(".units");
 
 form.addEventListener("submit", handleSubmit);
+units.addEventListener("click", changeUnits);
 
-async function fetchWeatherData(location) {
-  const response = fetch(
-    "'http://api.weatherapi.com/v1/forecast.json?key=b2cd91126b14b2285d45833232007&q=' + 'Anaheim Hills' '&/days=3&aqi=no&alerts=no'",
+function fetchWeatherData(cityName) {
+  // ${location}
+  //Get fetch and variable to work
+  const location = "Anaheim";
+  fetch(
+    `http://api.weatherapi.com/v1/forecast.json?key=b2cd91126b1e4b2285d45833232007&q=${location}&days=3&aqi=no&alerts=no`,
     {
       mode: "cors",
     },
-  );
-  console.log(response);
-
-  if (response.ok === true) {
-    console.log("Working");
-  } else {
-    //Show error below search
-    const errorText = document.querySelector(".error");
-    console.log(errorText);
-    errorText.style.display = "block";
-  }
+  )
+    .then((response) => {
+      if (response.ok) {
+        const errorText = document.querySelector(".error");
+        errorText.style.display = "none";
+        return response.json();
+      } else {
+        const errorText = document.querySelector(".error");
+        errorText.style.display = "block";
+        console.log("ERROR");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      const currentData = storeCurrentData(data);
+      displayData(currentData);
+    });
 }
-
 function handleSubmit(e) {
   e.preventDefault();
-  //needs get location  here
   const cityName = form.city.value;
-  fetchWeatherData(city);
+  fetchWeatherData(cityName);
 }
+
+function changeUnits() {
+  if (units.textContent == "Display °F") {
+    units.textContent = "Display °C";
+  } else units.textContent = "Display °F";
+}
+function storeCurrentData(data) {
+  const currentData = {
+    temp: {
+      temp_f: data.current.temp_f,
+      temp_c: data.current.temp.c,
+    },
+    condition: data.current.condition.text,
+    humidity: data.current.humidity,
+    feelsLike: {
+      feelsLike_f: data.current.feelslike_f,
+      feelsLike_f: data.current.feelslike_c,
+    },
+    windSpeed: data.current.gust_mph,
+  };
+
+  console.log(currentData.feelsLike);
+  return currentData;
+}
+
+function displayData() {}
