@@ -46,21 +46,46 @@ function changeUnits() {
 }
 function storeCurrentData(data) {
   const currentData = {
+    location: data.location.name,
     temp: {
       temp_f: data.current.temp_f,
-      temp_c: data.current.temp.c,
+      temp_c: data.current.temp_c,
     },
     condition: data.current.condition.text,
     humidity: data.current.humidity,
     feelsLike: {
       feelsLike_f: data.current.feelslike_f,
-      feelsLike_f: data.current.feelslike_c,
+      feelsLike_c: data.current.feelslike_c,
     },
     windSpeed: data.current.gust_mph,
   };
 
-  console.log(currentData.feelsLike);
+  console.log(currentData.location);
   return currentData;
 }
 
-function displayData() {}
+function displayData(currentData) {
+  const location = document.querySelector(".location-name");
+  const temperature = document.querySelector(".temperature");
+  const weather = document.querySelector(".weather-type");
+  const feel = document.querySelector(".feel-temperature");
+  const humidity = document.querySelector(".humidity-percent");
+  const windSpeed = document.querySelector(".wind-speed");
+
+  if (units.textContent === "Display °F") {
+    temperature.textContent = Math.round(currentData.temp.temp_f) + "°";
+    feel.textContent = Math.round(currentData.feelsLike.feelsLike_f) + "°";
+  } else {
+    temperature.textContent = Math.round(currentData.temp.temp_c) + "°";
+    feel.textContent = Math.round(currentData.feelsLike.feelsLike_c) + "°";
+  }
+  location.textContent = currentData.location;
+  weather.textContent = currentData.condition;
+  humidity.textContent = currentData.humidity + "%";
+  windSpeed.textContent = Math.round(currentData.windSpeed) + " m/h";
+}
+
+//TO DO
+//3 day forecast
+//change data on unit change
+//preload page with data from anaheim hills
