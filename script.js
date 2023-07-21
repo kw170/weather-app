@@ -89,3 +89,4 @@ function displayData(currentData) {
 //3 day forecast
 //change data on unit change
 //preload page with data from anaheim hills
+//maybe add images to current thingy

@@ -109,20 +109,21 @@
 
 .weather-type{
     color:var(--dark);
-
+}
+.current-img{
+    height:25px;
+    width:auto;
 }
 
-
 .lower{
-
     display: flex;
     justify-content: center;
     text-align: center;
-    padding:20px 10px;
-    gap:50px;
+    padding:25px 10px;
+    gap:80px;
     background-color: white;
     border-radius:50px;
-    width:350px;
+    width:450px;
     margin: 0 auto;
     box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
 }
@@ -136,8 +137,6 @@
 
 .feel-text, .humidity-text, .wind-text{
     color:var(--dark);
-
-
 }
 
 /* Forecast */
