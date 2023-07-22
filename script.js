@@ -8,7 +8,7 @@ units.addEventListener("click", changeUnits);
 
 function fetchWeatherData(cityName) {
   fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=b2cd91126b1e4b2285d45833232007&q=${cityName}&days=3&aqi=no&alerts=no`,
+    `https://api.weatherapi.com/v1/forecast.json?key=b2cd91126b1e4b2285d45833232007&q=${cityName}&days=3&aqi=no&alerts=no`,
     {
       mode: "cors",
     },
@@ -216,9 +216,6 @@ function storeForecast(data) {
   ];
   return forecast;
 }
-
-//TO DO
-//3 day forecast
 
 function onStart() {
   fetchWeatherData("Anaheim Hills");
