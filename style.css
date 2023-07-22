@@ -17,17 +17,21 @@
 
 /* Header */
 .header{
+    margin-top: 5px;;
     display: flex;
     justify-content: space-between;
 }
 
+.logo{
+    margin-left:5px;
+}
 .header-right{
     display: flex;
     width:300px;
     justify-content: center;
     gap:20px;
     align-items: center;
-
+    margin-right: 15px;
 }
 
 .units{
