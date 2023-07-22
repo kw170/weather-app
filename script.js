@@ -30,6 +30,7 @@ function fetchWeatherData(cityName) {
     .then((data) => {
       console.log(data);
       const currentData = storeCurrentData(data);
+      displayDate();
       displayData(currentData);
     });
 }
@@ -85,8 +86,49 @@ function displayData(currentData) {
   windSpeed.textContent = Math.round(currentData.windSpeed) + " m/h";
 }
 
+function displayDate() {
+  const date = new Date();
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  day = days[day];
+
+  let month = date.getMonth();
+  const monthsOfYear = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  month = monthsOfYear[month];
+  const dayNum = date.getDate();
+  const dateDisplay = document.querySelector(".date");
+  dateDisplay.textContent = day + " | " + month + " " + dayNum;
+}
+
 //TO DO
 //3 day forecast
 //change data on unit change
 //preload page with data from anaheim hills
-//maybe add images to current thingy
+//fix date
+
+function onStart() {
+  fetchWeatherData("Anaheim Hills");
+}
+
+onStart();
